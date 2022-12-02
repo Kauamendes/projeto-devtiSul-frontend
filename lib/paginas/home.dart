@@ -19,23 +19,30 @@ class _HomeState extends State<Home> {
       Navigator.of(context).pushReplacementNamed('/home');
     }
 
-     cadastro() {
-      Navigator.of(context).pushReplacementNamed('/cadastro');
+     consultaPessoa() {
+      Navigator.of(context).pushReplacementNamed('/consulta/pessoa');
     }
 
-     consulta() {
-      Navigator.of(context).pushReplacementNamed('/consulta');
+     consultaCidade() {
+      Navigator.of(context).pushReplacementNamed('/consulta/cidade');
     }
 
     return Scaffold(
       appBar: Componentes().criaAppBar("Utilização API", home),
       body: Form(
         child: Column(
-          children: [
-            Componentes().criaBotao(formController, cadastro, "Cadastro Pessoa"),
-            Componentes().criaBotao(formController, consulta, "Consulta Pessoas"),
-          ],
-        ),
+          mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+            const Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 0)),
+            Row (
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Componentes().criaCardComIconeTelaInicial(Icons.people,consultaPessoa, "Consultar Pessoas"),
+              const SizedBox(width: 20),
+              Componentes().criaCardComIconeTelaInicial(Icons.maps_home_work, consultaCidade, "Consultar Cidades"),
+            ],
+          ),
+        ]),
       ),
     );
   }

@@ -1,21 +1,23 @@
-import 'package:consumo_api_com_spring/paginas/cadastro.dart';
-import 'package:consumo_api_com_spring/paginas/consulta.dart';
+import 'package:consumo_api_com_spring/paginas/cadasto_cidade.dart';
+import 'package:consumo_api_com_spring/paginas/cadastro_pessoa.dart';
+import 'package:consumo_api_com_spring/paginas/consulta_cidade.dart';
+import 'package:consumo_api_com_spring/paginas/consulta_pessoa.dart';
 import 'package:consumo_api_com_spring/paginas/home.dart';
 import 'package:consumo_api_com_spring/util/tema.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const mainPage());
+  runApp(const MainPage());
 }
 
-class mainPage extends StatefulWidget {
-  const mainPage({super.key});
+class MainPage extends StatefulWidget {
+  const MainPage({super.key});
 
   @override
-  State<mainPage> createState() => _mainPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _mainPageState extends State<mainPage> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,8 +26,10 @@ class _mainPageState extends State<mainPage> {
       initialRoute: '/home',
       routes: {
         '/home':(context) => const Home(),
-        '/consulta':(context) => const Consulta(),
-        '/cadastro':(context) => const Cadastro(),
+        '/consulta/pessoa':(context) => const ConsultaPessoa(),
+        '/cadastro/pessoa':(context) => const CadastroPessoa(),
+        '/consulta/cidade':(context) => const ConsultaCidade(),
+        '/cadastro/cidade':(context) => const CadastroCidade(),
       },
     );
   }

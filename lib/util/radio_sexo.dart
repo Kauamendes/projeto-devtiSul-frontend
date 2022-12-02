@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
-enum sexoEnum { masculino, feminino}
+enum SexoEnum { masculino, feminino}
 
+// ignore: must_be_immutable
 class RadioSexo extends StatefulWidget {
   TextEditingController? controller;
   RadioSexo({Key? key, this.controller}) : super(key: key);
@@ -14,7 +12,7 @@ class RadioSexo extends StatefulWidget {
 }
 
 class _RadioSexoState extends State<RadioSexo> {
-  sexoEnum? _escolha = sexoEnum.masculino;
+  SexoEnum? _escolha = SexoEnum.masculino;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +21,10 @@ class _RadioSexoState extends State<RadioSexo> {
         Expanded(
           child: ListTile(
             title: const Text('Masculino'),
-            leading: Radio<sexoEnum> (
-              value: sexoEnum.masculino,
+            leading: Radio<SexoEnum> (
+              value: SexoEnum.masculino,
               groupValue: _escolha,
-              onChanged: (sexoEnum? value) {
+              onChanged: (SexoEnum? value) {
                 setState(() {
                   _escolha = value;
                   widget.controller?.text = 'M';
@@ -38,10 +36,10 @@ class _RadioSexoState extends State<RadioSexo> {
          Expanded(
           child: ListTile(
             title: const Text('Feminino'),
-            leading: Radio<sexoEnum> (
-              value: sexoEnum.feminino,
+            leading: Radio<SexoEnum> (
+              value: SexoEnum.feminino,
               groupValue: _escolha,
-              onChanged: (sexoEnum? value) {
+              onChanged: (SexoEnum? value) {
                 setState(() {
                   _escolha = value;
                   widget.controller?.text = 'F';

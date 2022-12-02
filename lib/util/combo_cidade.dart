@@ -2,6 +2,7 @@ import 'package:consumo_api_com_spring/api/acesso_api.dart';
 import 'package:consumo_api_com_spring/model/cidade.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class ComboCidade extends StatefulWidget {
   TextEditingController? controller;
 
@@ -33,7 +34,7 @@ class _ComboCidadeState extends State<ComboCidade> {
               onChanged: (int? value) {
                 setState(() {
                   cidadesel = value;
-                  widget.controller?.text = "${value}";
+                  widget.controller?.text = "$value";
                 });
               },
               items: cidades.map<DropdownMenuItem<int>>((Cidade cid) {
